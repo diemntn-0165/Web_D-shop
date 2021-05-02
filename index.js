@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index.routes');
 const orderouter = require('./routes/orderlines.routes');
 const login = require('./routes/login.routes');
 const register = require('./routes/register.routes');
@@ -13,7 +13,7 @@ const skirt = require('./routes/skirt.routes');
 const pants = require('./routes/pants.routes');
 const searchRouter = require('./routes/search.routes');
 var cors = require('cors');
-const { search } = require('./routes/index');
+const { search } = require('./routes/index.routes');
 const app = express();
 const port = 3000;
 

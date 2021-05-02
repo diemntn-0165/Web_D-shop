@@ -74,6 +74,8 @@ $(document).ready(function() {
   
     }).catch(err=>{console.log(err);
     });
+    
+   
 
 
   });

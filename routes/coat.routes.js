@@ -7,7 +7,10 @@ router.get('/', function(req, res, next) {
     item.findAll({
         where:{
             theme: 'Áo'
-        }
+        },
+        order: [
+          ['sold', 'DESC'],
+        ],
     }).then((data) => {
       res.json({data:data, status:201})
       

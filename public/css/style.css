@@ -26,6 +26,11 @@ html, body {
 .navbar .active {
 	font-weight: 600;
 }
+.navbar>.container-fluid {
+	z-index: 10;
+	padding: 0 5px !important;
+	background-color: white;
+}
 .navbar__login{
 	margin-left: 20%;
 	margin-right: 5%;
@@ -110,7 +115,10 @@ html, body {
 .input-search:focus {
 	border: 1px solid #222;
 }
- 
+.form-search {
+	display: flex;
+	width: 100%;
+} 
 /* Slide */
 .carousel-inner img {
 	width: 100%;

@@ -19,6 +19,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="./jquery/search.js"></script>
+	<script src="./jquery/home.js"></script>
 </head>
 <body>
 <!-- Navigation -->
@@ -51,13 +52,14 @@
 	</div>
 	
 	<div class="input-group rounded" >
-		<!-- <form action="/search.html" method="GET"> -->
-			<input type="search" id="search_item" class="input-search form-control rounded shadow-none" placeholder="キーワード検索"  />
-		<!-- </form> -->
+		<form class = "form-search">
+			<input type="search" name="item_name"  id="search-item__input" class="input-search form-control rounded shadow-none" placeholder="キーワード検索"  />
+
+			<button class="input-group-text border-0" id="search-addon" type="submit">
+				<i class="fas fa-search"></i>
+			  </button>
+		</form>
 	
-		<span class="input-group-text border-0" id="search-addon">
-		  <i class="fas fa-search"></i>
-		</span>
 	  </div>
 
 	<div class="navbar__login">

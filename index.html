@@ -36,7 +36,7 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav m-auto">
 				<li class="nav-item">
-					<a class="nav-link active" href="#">ホーム</a>
+					<a class="nav-link active" href="http://127.0.0.1:5500/index.html">ホーム</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="http://127.0.0.1:5500/skirt.html">スカート</a>
@@ -53,12 +53,14 @@
 	</div>
 	
 	<div class="input-group rounded" >
-		<input type="search" id="search_item" class="input-search form-control rounded shadow-none" placeholder="キーワード検索"  />
+		<form action="/search.html" class = "form-search">
+			<input type="search" name="item_name" autocomplete="on" id="search_item" class="input-search form-control rounded shadow-none" placeholder="キーワード検索"  />
+			<button class="input-group-text border-0" id="search-addon" type="submit">
+			  <i class="fas fa-search"></i>
+			</button>
+		</form>
 	
 	
-		<span class="input-group-text border-0" id="search-addon">
-		  <i class="fas fa-search"></i>
-		</span>
 	  </div>
 
 	<div class="navbar__login">
