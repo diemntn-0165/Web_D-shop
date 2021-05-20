@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(
-    'project',
+    'D-shop',
     'postgres',
     '05102000',
     {

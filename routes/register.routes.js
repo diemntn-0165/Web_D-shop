@@ -2,7 +2,6 @@ const express = require("express");
 const users = require("../models/users");
 
 const router = express.Router();
-const user = require('../models/users');
 router.post('/', async(req, res)=> {
     let {
         user_name ,
@@ -13,12 +12,11 @@ router.post('/', async(req, res)=> {
         district,
         email,
         phone,
-        //is_superuser,
-        //is_staff
+        
 
      } = req.body;
-    console.log(req.body);
-    user.findOne({ where:{user_name: req.body.user_name}}).then((data, message) =>{
+    console.log('req.body',req.body);
+    users.findOne({ where:{user_name: req.body.user_name}}).then((data, message) =>{
         if(data == null){
             users.create({
                 user_name,

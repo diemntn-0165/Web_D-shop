@@ -20,6 +20,8 @@
     <script src="./jquery/coat.js"></script>
     <script src="./jquery/login.js"></script>
 	<script src="./jquery/home.js"></script>
+	<script src="./jquery/search.js"></script>
+
 
 </head>
 
@@ -52,13 +54,16 @@
             </ul>
         </div>
     </div>
-    <div class="input-group rounded">
-		<input  type="search" class="input-search form-control rounded shadow-none" placeholder="キーワード検索" aria-label="Search"
-		  aria-describedby="search-addon" />
-		<span class="input-group-text border-0" id="search-addon">
-		  <i class="fas fa-search"></i>
-		</span>
-	</div>
+    <div class="input-group rounded search" >
+		<form action="/search.html" class = "form-search">
+			<input type="search" name="item_name" autocomplete="on" id="search_item" class="input-search form-control rounded shadow-none" placeholder="キーワード検索"  />
+			<button class="input-group-text border-0" id="search-addon" type="submit">
+			  <i class="fas fa-search"></i>
+			</button>
+		</form>
+	
+	
+	  </div>
 
     <div class="navbar__login">
 		<div class="navbar__login--not">
@@ -69,7 +74,9 @@
 		</div>
 		<div class="navbar__login--logged">
 			<i class="far fa-user-circle navbar__login--logged-icon"></i>
-            <span class="navbar__login--logged-name">Diem </span>
+            <div class="navbar__login--logged-name">
+				
+			</div>
 			 <div class="notifications" id="box"> 
 				<div class="notifications-item">
 					<a href="" class="notifications-item__link">

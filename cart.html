@@ -19,6 +19,7 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link href="./public/css/style.css" rel="stylesheet">
 	<script src="./jquery/home.js"></script>
+	<script src="./jquery/cart.js"></script>
 
     <!-- <script src="login.routes.js"></script> -->
 </head>
@@ -53,7 +54,7 @@
             </div>
         </div>
         
-        <div class="input-group rounded">
+        <div class="input-group rounded search">
             <input  type="search" class="input-search form-control rounded shadow-none" placeholder="キーワード検索" aria-label="Search"
               aria-describedby="search-addon" />
             <span class="input-group-text border-0" id="search-addon">
@@ -88,13 +89,11 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>STT</th>
-                                <th>Ảnh đại diện</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Số lượng</th>
-                                <th>Đơn giá</th>
-                                <th>Thành tiền</th>
-                                <th>Hành động</th>
+                                <th>番号</th>
+                                <th>製品名</th>
+                                <th>数量</th>
+                                <th>価格</th>
+                                <th>削除</th>
                             </tr>
                         </thead>
                         <tbody class="cart__items">

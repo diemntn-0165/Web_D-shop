@@ -12,6 +12,9 @@ const coat = require('./routes/coat.routes');
 const skirt = require('./routes/skirt.routes');
 const pants = require('./routes/pants.routes');
 const searchRouter = require('./routes/search.routes');
+const addCartRouter = require('./routes/add-cart.routes');
+const veiwCartRouter = require('./routes/view-cart.routes');
+
 var cors = require('cors');
 const { search } = require('./routes/index.routes');
 const app = express();
@@ -36,6 +39,9 @@ app.use('/order', orderouter);
 app.use('/login', login);
 app.use('/register', register);
 app.use('/search', searchRouter);
+app.use('/add-cart', addCartRouter);
+app.use('/view-cart', veiwCartRouter);
+
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

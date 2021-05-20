@@ -9,8 +9,9 @@ const bill = sequelize.define('bill',{
         type: Sequelize.CHAR,
         primaryKey: true
     },
-    user_id:{
+    user_name:{
         type: Sequelize.CHAR
+        
     },
     coupon_id:{
         type: Sequelize.CHAR
@@ -28,7 +29,7 @@ const bill = sequelize.define('bill',{
     );
     bill.belongsTo(coupon,{foreignKey: 'fk_billid_couponid', targetKey:'coupon_id'});
     coupon.hasMany(bill,{foreignKey: 'fk_billid_couponid', sourceKey:'coupon_id'});
-    users.hasMany(bill,{foreignKey: 'fk_billid_userid', sourceKey:'user_id'});
+    users.hasMany(bill,{foreignKey: 'fk_billid_userid', sourceKey:'user_name'});
 
-    bill.belongsTo(users,{foreignKey: 'fk_billid_userid', targetKey:'user_id'});
+    bill.belongsTo(users,{foreignKey: 'fk_billid_userid', targetKey:'user_name'});
     module.exports = bill;

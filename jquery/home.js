@@ -1,3 +1,5 @@
+// const { default: axios } = require("axios");
+
 $(document).ready(function() {
     
   axios.get('http://localhost:3000/').then((data)=>
@@ -6,7 +8,8 @@ $(document).ready(function() {
       const data_skirt = data.data.data[1];
       const data_coat = data.data.data[2];
       const data_pants = data.data.data[3];
-      for (let i = 0; i < 10; i++) {
+      
+      for (let i = 0; i < data_item.length; i++) {
   
         const item = data_item[i];  
         $('<div class="col-sm-2 khoiPic">'+'<div class="card">'+ '<img class="card-img-top" src="./public/images/'+ item.img +'">'+ '<div class="card-body">'+
@@ -19,7 +22,7 @@ $(document).ready(function() {
         
         
       }
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < data_skirt.length; i++) {
         const skirt = data_skirt[i];      
         $('<div class="col-sm-2 khoiPic">'+'<div class="card">'+ '<img class="card-img-top" src="./public/images/'+ skirt.img +'">'+ '<div class="card-body">'+
         '<p class="card-text">'+ skirt.item_name +'</p>'+
@@ -51,25 +54,47 @@ $(document).ready(function() {
         
       }
       
+    
       
       $(".btn_add-to-cart").click(function(){
-        // $('<tr>'+
-        //   '<td>2</td>'+
-        //   '<td>'+
-        //     '<img src="../assets/img/product/nokia-asha-311.jpg" class="hinhdaidien">'+
-        //   '</td>'+
-        //   '<td>Nokia Asha 311</td>'+
-        //   '<td class="text-right">4</td>'+
-        //   '<td class="text-right">2,699,000.00</td>'+
-        //   '<td class="text-right">1,0796,000</td>'+
-        //   '<td>'+
-        //     '<a id="delete_2" data-sp-ma="6" class="btn btn-danger btn-delete-sanpham">'+
-        //         '<i class="fa fa-trash" aria-hidden="true"></i> Xóa'+
-        //     '</a>'+
-        //   '</td>'+
-        //   '</tr>')
-        //   .appendTo('cart__items');
-          location.replace('/cart.html');
+        
+        const valueGetUsername = localStorage.getItem('username');
+        if(valueGetUsername === null){
+          alert('Please login!!!');
+        }else{
+         
+
+          const  $parent= $(this).parent('div');
+          const $item_name = $parent.find('.card-text').text();
+          for (let i = 0; i < data.data.data.length; i++) {
+          
+            for (let j = 0; j < data.data.data[i].length; j++) {
+             if (data.data.data[i][j].item_name == $item_name) {
+               var item_id_add_cart = data.data.data[i][j].item_id;
+               break;
+             }
+            }
+          }
+          axios.post('http://localhost:3000/add-cart', {user_name : valueGetUsername, item_id:item_id_add_cart }).then((data,message) => {
+      
+            if(data.data.message === "Add item succeeded!!!"){
+              alert("Add item succeeded!!");
+        
+            } else{
+              if(data.data.message === "Item existed in cart"){
+                alert("Item existed in cart. Update amount succeeded!!!")
+              }else{ 
+              alert("Add item failed!!");
+              }
+            }
+            
+          }).catch(err => {
+              console.log('err',err);
+          })
+          
+            // location.replace('/cart.html');
+        }
+
     })
   
     }).catch(err=>{console.log(err);

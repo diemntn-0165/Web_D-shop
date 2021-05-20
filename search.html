@@ -18,6 +18,7 @@
     <!-- <script src="login.routes.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 	<script src="./jquery/search.js"></script>
 	<script src="./jquery/home.js"></script>
 </head>
@@ -51,7 +52,7 @@
 		</div>
 	</div>
 	
-	<div class="input-group rounded" >
+	<div class="input-group rounded search" >
 		<form class = "form-search">
 			<input type="search" name="item_name"  id="search-item__input" class="input-search form-control rounded shadow-none" placeholder="キーワード検索"  />
 
@@ -71,7 +72,9 @@
 		</div>
 		<div class="navbar__login--logged">
 			<i class="far fa-user-circle navbar__login--logged-icon"></i>
-            <span class="navbar__login--logged-name">Diem </span>
+            <div class="navbar__login--logged-name">
+				
+			</div>
 			 <div class="notifications" id="box"> 
 				<div class="notifications-item">
 					<a href="" class="notifications-item__link">

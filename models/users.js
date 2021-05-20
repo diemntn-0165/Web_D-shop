@@ -2,17 +2,18 @@ const Sequelize = require('sequelize');
 const sequelize = require('../databases/database').sequelize;
 const Op = require('../databases/database').Op;
 const users = sequelize.define('users',{
-    user_id:{
+    // user_id:{
+    //     type: Sequelize.CHAR,
+    //     primaryKey: true
+    // },
+    user_name:{
         type: Sequelize.CHAR,
         primaryKey: true
     },
     pass_word:{
         type: Sequelize.CHAR
     },
-    user_name:{
-        type: Sequelize.CHAR
-        
-    },
+    
     first_name:{
         type: Sequelize.CHAR
     },
