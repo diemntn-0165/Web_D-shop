@@ -1,3 +1,3 @@
 # Web_D-shop
-Running the app
+# Running the app
 $ npm start
