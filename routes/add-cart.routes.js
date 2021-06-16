@@ -16,7 +16,7 @@ router.post('/', async(req, res)=> {
                 cart.create({
                     user_name: req.body.user_name,
                     item_id: req.body.item_id,
-                     amount: 1,
+                    amount: 1,
                 
                 },{
                     fields: ["user_name","item_id","amount"]

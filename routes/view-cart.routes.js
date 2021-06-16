@@ -25,7 +25,7 @@ router.post('/', async(req, res)=> {
                           },
                     }
                 }).then(data => {
-                    res.json({data:data, amount: arrayAmount, status:201})
+                    res.json({data:data, amount: arrayAmount, itemId: arrayItemId, status:201})
                 });
                 
             
